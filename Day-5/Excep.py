@@ -20,6 +20,6 @@ class Age:
 
 obj = Age()
 try:
-    obj.test(17,56)
+    obj.test(a,b)
 except Exception as e:
     print(e)

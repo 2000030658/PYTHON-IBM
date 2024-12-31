@@ -8,10 +8,11 @@ class Model2(Model1):
     def display(self):
         print("Curved Displey")
     def storage(self):
-        print("256GB")
-        #super().storage()
+        #print("256GB")
+        super().storage()
 
 
 obj=Model2()
 obj.camera()
 obj.storage()
+obj.display()

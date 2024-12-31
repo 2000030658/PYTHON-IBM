@@ -1,0 +1,6 @@
+file = open("two.txt","w")
+file.write("Welcome\n")
+file.write("hi\n")
+#file = open("two.txt","a")
+file1 = open("two.txt","r")
+print(file1.read())
