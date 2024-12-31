@@ -81,7 +81,7 @@ class BankingSystem:
             print("Customer not found.")
 
 
-def system():
+def BankSystem():
     banking_system = BankingSystem()
     
     while True:
@@ -131,4 +131,4 @@ def system():
         else:
             print("Invalid choice. Please try again.")
 
-system()
+BankSystem()
