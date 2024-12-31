@@ -31,7 +31,7 @@ class Customer:
     def apply_interest(self):
         if self.account_type == "Savings":
             with self.lock:
-                interest = self.balance * 0.05  # Applying 5% interest for savings accounts
+                interest = self.balance * 0.05  #5% interest for savings accounts
                 self.balance += interest
                 self.transaction_history.append(f"Applied interest: {interest}")
                 print(f"Interest applied: {interest}. New balance: {self.balance}")
@@ -41,7 +41,7 @@ class Customer:
         for transaction in self.transaction_history:
             print(transaction)
 
-# Banking System Class
+# BankingSystem Class
 class BankingSystem:
     def __init__(self):
         self.customers = {}
@@ -54,7 +54,7 @@ class BankingSystem:
         try:
             with open(filename, mode='r') as file:
                 reader = csv.reader(file)
-                next(reader)  # Skip header
+                next(reader)  
                 for row in reader:
                     customer_id, name, balance = row
                     self.customers[customer_id] = Customer(customer_id, name, float(balance), "Savings")
@@ -63,7 +63,7 @@ class BankingSystem:
 
     def periodic_interest(self):
         while True:
-            time.sleep(10)  # Apply interest every 10 seconds
+            time.sleep(10)  # Applying interest for every 10 seconds
             for customer in self.customers.values():
                 customer.apply_interest()
 
@@ -80,8 +80,8 @@ class BankingSystem:
         else:
             print("Customer not found.")
 
-# Main function to interact with the system
-def main():
+
+def system():
     banking_system = BankingSystem()
     
     while True:
@@ -131,5 +131,4 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
-if __name__ == "__main__":
-    main()
+system()
